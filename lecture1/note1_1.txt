@@ -1,0 +1,11 @@
+(base) zcw@mukoedo1993:~/python_related_clone/Python_related/computer_system/lecture1$ gcc lec1_1.c
+(base) zcw@mukoedo1993:~/python_related_clone/Python_related/computer_system/lecture1$ ./a.out
+3.140000
+3.140000
+3.140000
+2.000001
+3.140000
+3.140000
+(base) zcw@mukoedo1993:~/python_related_clone/Python_related/computer_system/lecture1$ 
+
+
