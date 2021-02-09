@@ -1,0 +1,9 @@
+objdump -d sum > sum.d
+#See sum.d for more details
+
+
+
+#Another example given in the course:
+objdump -d WINWORD.EXE
+But, it is usu. illegal. Because reverse engineering forbidden by
+Microsoft End User License Agreement.

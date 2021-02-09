@@ -1,0 +1,3 @@
+(base) zcw@mukoedo1993:~/operating_system_clone/operating_system/lecture5$ gcc -Og -S sum.c
+(base) zcw@mukoedo1993:~/operating_system_clone/operating_system/lecture5$ 
+# To generate sum.s, which is the assembly code.

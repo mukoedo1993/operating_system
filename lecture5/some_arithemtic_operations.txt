@@ -1,0 +1,69 @@
+Format Computation
+addq   Src, Dest     Dest = Dest + Src
+subq   Src, Dest     Dest = Dest - Src
+imulq  Src, Dest     Dest = Dest * Src
+salq   Src, Dest     Dest = Dest << Src
+sarq   Src, Dest     Dest = Dest >> Src
+shrq   Src, Dest     Dest = Dest >> Src
+xorq   Src, Dest     Dest = Dest ^ Src
+andq   Src, Dest     Dest = Dest & Src
+orq    Src, Dest     Dest = Dest | Src
+
+
+incq   Dest  Dest = Dest + 1
+decq   Dest  Dest = Dest - 1
+negq   Dest   Dest =- Dest
+notq   Dest   Dest =~ Dest
+
+
+Watch out for argument order!
+
+No distinction between signed and unsigned int (why?)
+Because the arithmetic and logical operations share the same behavior here.
+
+
+
+
+
+
+-------------
+-------------------------------------------------------------------------------
+//C code:
+long arith
+(long x, long y, long z)
+{
+    long t1 = x+y;
+    long t2 = z+t1;
+    long t3 = x+4;
+    long t4 = y * 48;
+    long t5 = t3 + t4;
+    long rval = t2 *t5;
+    return rval;
+}
+
+
+arith:
+    leaq     (%rdi, %rsi), %rax
+    addq     %rdx, %rax
+    leaq     (%rsi, %rsi, 2), %rdx
+    salq     $4, %rdx
+    leaq     4(%rdi, %rdx), %rcx
+    imulq    %rcx, %rax
+    ret
+
+
+Register   Use(s)
+%rdi      Argument x
+%rsi      Argument y
+%rdx      Argument z
+%rax      t1, t2, rval
+%rdx      t4
+%rval     t5
+
+
+Interesting instructions:
+    1: leaq: address Computation
+    2: salq: shift
+    3: imulq: multiplication
+       But, only used once
+       Because compiler optimize itself to find better and more efficient instructions.
