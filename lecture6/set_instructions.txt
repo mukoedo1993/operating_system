@@ -1,0 +1,13 @@
+Does not alter remaining 7 bytes:
+
+SetX    Condition      Description
+sete    ZF             Equal / Zero
+setne   ~ZF            Not Equal / Not Zero
+sets    SF             Negative
+setns   ~SF            Nonnegative
+setg    ~(SF^OF)&~ZF   Greater (Signed)
+setge   ~(SF^OF)       Greater or Equal (Signed)
+setl    (SF^OF)        Less (Signed)
+setle   (SF^OF)|ZF     Less or Equal (Signed)
+seta     ~CF&~ZF       Above(unsigned)
+setb     CF            Below(unsigned)

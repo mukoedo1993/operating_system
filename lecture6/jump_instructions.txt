@@ -1,0 +1,13 @@
+Does not alter remaining 7 bytes:
+
+jX    Condition      Description
+jmp   1              Unconditional
+je    ZF             Equal/Zero
+jne   ~ZF            Not Equal/Not Zero
+js    SF             Negative
+jns   ~SF            Nonnegative
+jg    ~(SF^OF)&~ZF   Greater(Signed)
+jge   ~(SF^OF)       Greater or Equal(Signed)
+jl    (SF^OF)        Less(Signed)
+ja    ~CF&~ZF        Above(unsigned)
+jb    CF             Below(unsigned)
