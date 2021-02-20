@@ -3,6 +3,7 @@
   400540:  push   %rbx               # Save %rbx
   400541:  mov    %rbx, %rbx         # Save dest
   400544:  callq  400550 <mult2>     # mult2 (x,y)
+  # t in %rax
   400549:  mov    %rax,(%rbx)        # Save at dest      
   400544c: pop    %rbx               # Restore  %rbx
   40054d:  retq                      # Return  
@@ -11,4 +12,5 @@
 # a in $rdi, b in %rsi
   400550:  mov    %rdi, %rax               # Save %rbx
   400553:  imul   %rsi, %rax               #
+# s in %rax
   400557:  retq        
