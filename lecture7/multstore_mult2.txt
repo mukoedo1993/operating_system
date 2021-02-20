@@ -1,0 +1,14 @@
+0000000000400540 <multstore>:
+# x in %rdi, y in %rsi, dest in %rdx
+  400540:  push   %rbx               # Save %rbx
+  400541:  mov    %rbx, %rbx         # Save dest
+  400544:  callq  400550 <mult2>     # mult2 (x,y)
+  400549:  mov    %rax,(%rbx)        # Save at dest      
+  400544c: pop    %rbx               # Restore  %rbx
+  40054d:  retq                      # Return  
+
+0000000000400550 <mult2>:
+# a in $rdi, b in %rsi
+  400550:  mov    %rdi, %rax               # Save %rbx
+  400553:  imul   %rsi, %rax               #
+  400557:  retq        
